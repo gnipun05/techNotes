@@ -10,7 +10,7 @@ export const store = configureStore({
     },
     middleware: (getDefaultMiddleware) => 
         getDefaultMiddleware().concat(apiSlice.middleware),
-    devTools: true
+    devTools: false
 });
 
 setupListeners(store.dispatch) // we are adding this line to get the functionlity where if we have more than one devices with same user logged in, then if we make a change in one device, then the other device will also get updated with the changes

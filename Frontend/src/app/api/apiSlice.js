@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { setCredentials } from '../../features/auth/authSlice'
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'http://localhost:3500',
+    baseUrl: process.env.REACT_APP_BACKEND_URL,
     credentials: 'include', // This option explicitly includes cookies and credentials with the request, even for cross-origin requests. It's the most permissive setting and is often used when dealing with APIs that require credentials regardless of the origin.
     prepareHeaders: (headers, { getState }) => { // prepareHeaders function is a way to customize the headers that will be sent with each request
         const token = getState().auth.token
